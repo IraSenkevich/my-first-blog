@@ -4,13 +4,16 @@
       </head>
       <body>
         <div>
-          <h1> Good day! </h1>
+          <h1> <a href="http://tutorial.djangogirls.org/ru/html/index.html">Django Girls Blog</a></h1>
         </div>
 
-        <h2> <a href="http://tutorial.djangogirls.org/ru/html/index.html">Django Girls Blog</a></h1>
+        {% for post in posts %}
+                <div>
+                    <p> published: {{ post.publishe_date }}</p>
+                    <h1><a href=""> {{ post.title}}</a></h1>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+        {% endfor %}
 
-    <p> Hi there! </p>
-    <p>It works!</p>
-    <ul><li>one</li><li>two</li><li>three</li></ul>
      </body>
 </html>
